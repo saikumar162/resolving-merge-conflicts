@@ -1,15 +1,208 @@
-pseudo code
-{
-Initial Function()
-{
-  //Sample Code
-}
 
-Initial Security()
-{
- //Sample Code
-}
+568582@LT047014 MINGW64 /d/saikumar
+$ git clone https://github.com/saikumar162/resolving-merge-conflicts.git
+Cloning into 'resolving-merge-conflicts'...
+warning: You appear to have cloned an empty repository.
 
+568582@LT047014 MINGW64 /d/saikumar
+$ cd resol*
 
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/saikumar162/resolving-merge-conflicts.git'
 
-}
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git add main.c
+fatal: pathspec 'main.c' did not match any files
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git add *
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git commit -m "main.c file committed with security patch"
+[master (root-commit) c3a2470] main.c file committed with security patch
+ 1 file changed, 15 insertions(+)
+ create mode 100644 main.c.txt
+git p
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 304 bytes | 101.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git checkout Feature1
+error: pathspec 'Feature1' did not match any file(s) known to git.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git pull
+From https://github.com/saikumar162/resolving-merge-conflicts
+ * [new branch]      Feature1   -> origin/Feature1
+ * [new branch]      Feature2   -> origin/Feature2
+Already up to date.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git checkout Feature1
+Switched to a new branch 'Feature1'
+Branch 'Feature1' set up to track remote branch 'Feature1' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature1)
+$ git add main.c
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature1)
+$ git commit -m "updated feature1 with patch"
+[Feature1 0a69c1c] updated feature1 with patch
+ 1 file changed, 15 insertions(+)
+ create mode 100644 main.c
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature1)
+$ git push -u origin Feature1
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 348 bytes | 58.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+   c3a2470..0a69c1c  Feature1 -> Feature1
+Branch 'Feature1' set up to track remote branch 'Feature1' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature1)
+$ git checkout Feature2
+Switched to a new branch 'Feature2'
+Branch 'Feature2' set up to track remote branch 'Feature2' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature2)
+$ git add main.c
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature2)
+$ git commit -m "updated feature 2 main.c"
+[Feature2 e16737b] updated feature 2 main.c
+ 1 file changed, 15 insertions(+)
+ create mode 100644 main.c
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature2)
+$ git push -u origin Feature2
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 346 bytes | 115.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+   c3a2470..e16737b  Feature2 -> Feature2
+Branch 'Feature2' set up to track remote branch 'Feature2' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature2)
+$ git merge master
+Already up to date.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (Feature2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git merge Feature1
+Updating c3a2470..0a69c1c
+Fast-forward
+ main.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 main.c
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git commit -m "feature 1 merged"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        deleted:    main.c.txt
+
+no changes added to commit
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git add *
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git commit -m "merged feature1"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        deleted:    main.c.txt
+
+no changes added to commit
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git push -u origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+   c3a2470..0a69c1c  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/saikumar162/resolving-merge-conflicts
+   0a69c1c..6c5e54d  master     -> origin/master
+Updating 0a69c1c..6c5e54d
+Fast-forward
+ main.c.txt | 15 ---------------
+ 1 file changed, 15 deletions(-)
+ delete mode 100644 main.c.txt
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git merge Feature2
+CONFLICT (rename/add): Rename main.c.txt->main.c in HEAD. main.c added in Feature2
+Adding as main.c~Feature2 instead
+Automatic merge failed; fix conflicts and then commit the result.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master|MERGING)
+$ git commit -m "feature 2 patch updated"
+[master 1abe10d] feature 2 patch updated
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git push -u origin master
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 222 bytes | 111.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+   6c5e54d..1abe10d  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git pull
+Already up to date.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git add *
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git commit -m "merged code from feature2"
+[master 9178c71] merged code from feature2
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+g
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 146.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/saikumar162/resolving-merge-conflicts.git
+   1abe10d..9178c71  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+568582@LT047014 MINGW64 /d/saikumar/resolving-merge-conflicts (master)
+$
